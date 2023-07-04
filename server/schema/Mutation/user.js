@@ -1,6 +1,5 @@
-const { GraphQLList, GraphQLString, GraphQLInt } = require("graphql")
+const { GraphQLString, GraphQLInt } = require("graphql")
 const StatusType = require("../Typedefs/statusType")
-const UserType = require('../Typedefs/usertype')
 
 let db = require('../../models/index')
 const Users = db.user

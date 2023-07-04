@@ -7,7 +7,7 @@ const Users = db.user
 
 
 module.exports.AddUser = {
-    type: UserType,
+    type: StatusType,
     args: {
         name: { type: GraphQLString },
         email: { type: GraphQLString },
@@ -16,10 +16,10 @@ module.exports.AddUser = {
     },
     resolve(parent, args) {
         Users.create({
-            name: "vinayak",
-            email: 'vinayak@gmail.com',
-            gender: "male",
-            status: "unmarried"
+            name: args.name,
+            email: args.email,
+            gender: args.gender,
+            status: args.status
         })
         return args
     }

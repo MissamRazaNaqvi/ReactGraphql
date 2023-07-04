@@ -13,13 +13,15 @@ module.exports.UserList = {
         return data
     }
 }
+// SpecificUser using direct fetch from database
 module.exports.SpecificUser = {
     type: new GraphQLList(UserType),
     resolve(parent, args) {
-        let data = Users.findAll({ where: { id: 1 } })
+        let data = user.findAll({ where: { id: 1 } })
         return data
     }
 }
+// use root variable of main index file using parent
 module.exports.UserDetails = {
     type: new GraphQLList(UserType),
     args: {
